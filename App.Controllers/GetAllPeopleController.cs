@@ -24,7 +24,7 @@ namespace App.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<PersonDTO>> GetAllPerson()
+        public async Task<IEnumerable<PersonDTO>> GetAllPeople()
         {
             await InputPort.Handle();
             return ((IPresenter<IEnumerable<PersonDTO>>)OutputPort).Content;
