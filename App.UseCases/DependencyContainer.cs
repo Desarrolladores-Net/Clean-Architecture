@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using App.UseCasePorts;
 using App.UseCases.CreatePerson;
-using App.UseCases.GetAllProducts;
+using App.UseCases.GetAllPeople;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace App.UseCases
@@ -15,7 +15,7 @@ namespace App.UseCases
         public static IServiceCollection AddUseCasesServices(this IServiceCollection services)
         {
             services.AddTransient<ICreatePersonInputPort, CreatePersonInteractor>();
-            services.AddTransient<IGetAllPersonInputPort, GetAllPersonsInteractor>();
+            services.AddTransient<IGetAllPeopleInputPort, GetAllPeopleInteractor>();
 
             return services;
         }

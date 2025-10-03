@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace App.UseCasePorts
 {
-    public interface IGetAllPersonOutputPort
+    public interface IGetAllPeopleOutputPort
     {
         Task Handle(IEnumerable<PersonDTO> persons);
     }

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.UseCases.GetAllProducts
+namespace App.UseCases.GetAllPeople
 {
-    public class GetAllPersonsInteractor : IGetAllPersonInputPort
+    public class GetAllPeopleInteractor : IGetAllPeopleInputPort
     {
         private readonly IPersonRepository Repository;
-        private readonly IGetAllPersonOutputPort OutputPort;
+        private readonly IGetAllPeopleOutputPort OutputPort;
 
-        public GetAllPersonsInteractor(IPersonRepository repository, IGetAllPersonOutputPort outputPort)
+        public GetAllPeopleInteractor(IPersonRepository repository, IGetAllPeopleOutputPort outputPort)
         {
             Repository = repository;
             OutputPort = outputPort;

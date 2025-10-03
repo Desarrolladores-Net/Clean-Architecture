@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace App.Presenters
 {
-    public class GetAllPersonsPresenter : IGetAllPersonOutputPort, IPresenter<IEnumerable<PersonDTO>>
+    public class GetAllPeoplePresenter : IGetAllPeopleOutputPort, IPresenter<IEnumerable<PersonDTO>>
     {
         public IEnumerable<PersonDTO> Content { get; private set;}
 

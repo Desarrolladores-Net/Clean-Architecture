@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.UseCasePorts
 {
-    public interface IGetAllPersonInputPort
+    public interface IGetAllPeopleInputPort
     {
         Task Handle();
     }

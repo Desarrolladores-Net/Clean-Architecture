@@ -13,7 +13,7 @@ namespace App.Presenters
         public static IServiceCollection AddPresenters(this IServiceCollection services)
         {
             services.AddScoped<ICreatePersonOutputPort, CreatePersonPresenter>();
-            services.AddScoped<IGetAllPersonOutputPort, GetAllPersonsPresenter>();
+            services.AddScoped<IGetAllPeopleOutputPort, GetAllPeoplePresenter>();
 
             return services;
         }

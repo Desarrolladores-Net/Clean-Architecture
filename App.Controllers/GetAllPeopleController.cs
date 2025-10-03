@@ -12,12 +12,12 @@ namespace App.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GetAllPersonController
+    public class GetAllPeopleController
     {
-        private readonly IGetAllPersonInputPort InputPort;
-        private readonly IGetAllPersonOutputPort OutputPort;
+        private readonly IGetAllPeopleInputPort InputPort;
+        private readonly IGetAllPeopleOutputPort OutputPort;
 
-        public GetAllPersonController(IGetAllPersonInputPort inputPort, IGetAllPersonOutputPort outputPort)
+        public GetAllPeopleController(IGetAllPeopleInputPort inputPort, IGetAllPeopleOutputPort outputPort)
         {
             InputPort = inputPort;
             OutputPort = outputPort;
