@@ -32,21 +32,21 @@ La arquitectura está organizada en capas concéntricas donde las dependencias a
 El proyecto sigue la arquitectura de 4 capas propuesta por Robert C. Martin:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  1. Frameworks & Drivers (App.API)                      │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  2. Interface Adapters                            │  │
-│  │  (Controllers, Presenters, Gateways, IoC)         │  │
-│  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │  3. Application Business Rules              │  │  │
-│  │  │  (Use Cases, Ports, DTOs)                   │  │  │
-│  │  │  ┌───────────────────────────────────────┐  │  │  │
-│  │  │  │  4. Enterprise Business Rules         │  │  │  │
-│  │  │  │  (Entities, Interfaces)               │  │  │  │
-│  │  │  └───────────────────────────────────────┘  │  │  │
-│  │  └─────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│  1. Frameworks y Controladores (App.API)                        │
+│  ┌───────────────────────────────────────────────────────────┐  │
+│  │  2. Adaptadores de Interfaz                               │  │
+│  │  (Controladores, Presentadores, Gateways, IoC)            │  │
+│  │  ┌─────────────────────────────────────────────────────┐  │  │
+│  │  │  3. Reglas de Negocio de Aplicación                │  │  │
+│  │  │  (Casos de Uso, Puertos, DTOs)                      │  │  │
+│  │  │  ┌───────────────────────────────────────────────┐  │  │  │
+│  │  │  │  4. Reglas de Negocio Empresariales           │  │  │  │
+│  │  │  │  (Entidades, Interfaces)                      │  │  │  │
+│  │  │  └───────────────────────────────────────────────┘  │  │  │
+│  │  └─────────────────────────────────────────────────────┘  │  │
+│  └───────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ### Capas
@@ -266,11 +266,11 @@ Response:
 
 ### SOLID
 
-- **S**ingle Responsibility Principle: Cada clase tiene una única responsabilidad
-- **O**pen/Closed Principle: Abierto para extensión, cerrado para modificación
-- **L**iskov Substitution Principle: Las abstracciones pueden ser reemplazadas por sus implementaciones
-- **I**nterface Segregation Principle: Interfaces específicas en lugar de interfaces generales
-- **D**ependency Inversion Principle: Dependencias hacia abstracciones, no hacia implementaciones concretas
+- **S**ingle Responsibility Principle (Principio de Responsabilidad Única): Cada clase tiene una única responsabilidad
+- **O**pen/Closed Principle (Principio Abierto/Cerrado): Abierto para extensión, cerrado para modificación
+- **L**iskov Substitution Principle (Principio de Sustitución de Liskov): Las abstracciones pueden ser reemplazadas por sus implementaciones
+- **I**nterface Segregation Principle (Principio de Segregación de Interfaces): Interfaces específicas en lugar de interfaces generales
+- **D**ependency Inversion Principle (Principio de Inversión de Dependencias): Dependencias hacia abstracciones, no hacia implementaciones concretas
 
 ### Clean Architecture
 
@@ -282,47 +282,47 @@ Response:
 
 ## 🎨 Patrones de Diseño
 
-### Repository Pattern
+### Patrón Repository (Repositorio)
 Abstrae la lógica de acceso a datos, permitiendo cambiar la implementación sin afectar la lógica de negocio.
 
-### Unit of Work Pattern
+### Patrón Unit of Work (Unidad de Trabajo)
 Mantiene una lista de objetos afectados por una transacción y coordina la escritura de cambios.
 
-### Dependency Injection
+### Inyección de Dependencias
 Todas las dependencias se inyectan a través de constructores, facilitando las pruebas y el desacoplamiento.
 
-### Use Case (Interactor) Pattern
+### Patrón Use Case / Interactor (Caso de Uso)
 Cada caso de uso está encapsulado en su propia clase, facilitando la comprensión y mantenimiento.
 
-### Presenter Pattern
+### Patrón Presenter (Presentador)
 Separa la lógica de presentación de los controladores, permitiendo múltiples formatos de salida.
 
 ## 🔄 Flujo de Datos
 
 ```
-Request (HTTP)
+Solicitud (HTTP)
     ↓
-Controller (convierte HTTP a DTO)
+Controlador (convierte HTTP a DTO)
     ↓
-Input Port (interfaz del caso de uso)
+Puerto de Entrada (interfaz del caso de uso)
     ↓
-Use Case Interactor (lógica de aplicación)
+Interactor de Caso de Uso (lógica de aplicación)
     ↓
-Repository (acceso a datos)
+Repositorio (acceso a datos)
     ↓
-Database
+Base de Datos
     ↓
-Repository (retorna entidades)
+Repositorio (retorna entidades)
     ↓
-Use Case Interactor (procesa entidades)
+Interactor de Caso de Uso (procesa entidades)
     ↓
-Output Port (interfaz de presentación)
+Puerto de Salida (interfaz de presentación)
     ↓
-Presenter (formatea datos)
+Presentador (formatea datos)
     ↓
-Controller (retorna resultado)
+Controlador (retorna resultado)
     ↓
-Response (HTTP)
+Respuesta (HTTP)
 ```
 
 ## 🧪 Extensiones Futuras
